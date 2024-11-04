@@ -1,165 +1,185 @@
 :root {
---bento-Purple-100: hsl(254, 88%, 90%);
---bento-Purple-500: hsl(256, 67%, 59%);
---bento-Yellow-100: hsl(31, 66%, 93%);
---bento-Yellow-500: hsl(39, 100%, 71%);
---bento-White: hsl(0, 0%, 100%);
---bento-Black: hsl(0, 0%, 7%);
+  --bento-Purple-100: hsl(254, 88%, 90%);
+  --bento-Purple-500: hsl(256, 67%, 59%);
+  --bento-Yellow-100: hsl(31, 66%, 93%);
+  --bento-Yellow-500: hsl(39, 100%, 71%);
+  --bento-White: hsl(0, 0%, 100%);
+  --bento-Black: hsl(0, 0%, 7%);
 }
 
 @font-face {
-    font-family: DMSans;
-    src: url(/fonts/DMSans-VariableFont_opsz\,wght.ttf);
-    font-style: normal;
+  font-family: DMSans;
+  src: url(/fonts/DMSans-VariableFont_opsz\,wght.ttf);
+  font-style: normal;
 }
 @font-face {
-    font-family: DMSans;
-    src: url(/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
-    font-style: italic;
+  font-family: DMSans;
+  src: url(/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+  font-style: italic;
 }
 
 body {
-    font-family: DMSans, sans-serif;
+  font-family: DMSans, sans-serif;
 }
 
 body p {
-    font-size: 18px; 
+  font-size: 18px;
 }
 
 h3 {
-    margin: 0; 
-    font-size: 1.5rem; 
+  margin: 0;
+  font-size: 1.5rem;
 }
 
+@media (width > 768px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      " create social social schedule"
+      " ai accounts posting schedule"
+      " ai audience followers followers";
+  }
+  .audience,
+  .followers {
+    max-height: 200px;
+  }
+  .followers {
+    flex-direction: row !important;
+  }
+}
 .box {
-    padding: 1.5rem;
-    box-shadow: 0 0 10px 1px black;
-    border-radius: 10px;
-    margin: 1.2rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px 1px black;
+  border-radius: 10px;
+  margin: 1.2rem;
 }
 
 .social-media {
-    background-color: var(--bento-Purple-500);
-    color:var(--bento-White);
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-
+  background-color: var(--bento-Purple-500);
+  color: var(--bento-White);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: social;
 }
 
 .social-media h1 {
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight:500;
-    margin: 0 0 .8rem 0;
-    line-height: 3.5rem;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0 0 0.8rem 0;
+  line-height: 3.5rem;
 }
 
 .social-media img {
-    width: 70%;
+  width: 70%;
 }
 
 .social-media p {
-    font-size: 1.5rem;
-    margin: .2rem;
+  font-size: 1.5rem;
+  margin: 0.2rem;
 }
 
 .tenx {
-    color: var(--bento-Yellow-500);
-
+  color: var(--bento-Yellow-500);
 }
 
 .faster {
-    font-style: italic;
-
+  font-style: italic;
 }
 
 .accounts {
-    background-color: var(--bento-White);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: var(--bento-White);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: accounts;
 }
 
 .accounts img {
-width: 110%;
+  width: 110%;
 }
 
 .posting {
-    background-color: var(--bento-Yellow-500);
-    padding-bottom: 0;
+  background-color: var(--bento-Yellow-500);
+  padding-bottom: 0;
+  grid-area: posting;
 }
 
 .posting img {
-    width: 70%;
-    margin-top:.5rem; 
-    margin-bottom: 0;
-    display: block; 
+  width: 70%;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  display: block;
 }
 
 .schedule {
-    background-color: var(--bento-Purple-100);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: var(--bento-Purple-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: schedule;
 }
 
 .schedule img {
-    width: 100%;
-    margin: 1rem 
+  width: 100%;
+  margin: 1rem;
 }
 
 .schedule p {
-    text-align: center;
+  text-align: center;
 }
 
 .followers {
-    background-color: var(--bento-Purple-500);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--bento-White);
+  background-color: var(--bento-Purple-500);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--bento-White);
+  grid-area: followers;
 }
 
 .followers img {
-    width: 80%;
+  width: 10rem;
 }
 
 .followers h2 {
-    
-    text-align: center;
+  text-align: center;
 }
 
 .audience h1 {
-    font-size: 3rem; 
-    margin: 0; 
+  font-size: 3rem;
+  margin: 0;
+  grid-area: audience;
 }
 /* .audience p {
     margin:0; 
 } */
 
 .audience img {
-    width: 60%;
+  width: 60%;
 }
 
 .create {
-    background-color: var(--bento-Yellow-100);
+  background-color: var(--bento-Yellow-100);
+  grid-area: create;
 }
 
 .create img {
-    width: 60%;
+  width: 60%;
 }
 
 .quicker {
-    color: var(--bento-Purple-500);
-    font-style: italic;
+  color: var(--bento-Purple-500);
+  font-style: italic;
 }
 
 .ai {
-    background-color: var(--bento-Yellow-500);
+  background-color: var(--bento-Yellow-500);
+  grid-area: ai;
 }
 
 .ai img {
-    width: 70%;
+  width: 70%;
 }
